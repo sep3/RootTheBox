@@ -15,5 +15,6 @@ RUN apt-get install python3-pycurl sqlite3 libsqlite3-dev -y
 ADD ./setup/requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt --upgrade
 
+
 VOLUME ["/opt/rtb/files"]
 ENTRYPOINT ["python3", "/opt/rtb/rootthebox.py", "--setup=docker", "--sql_dialect=sqlite"]
